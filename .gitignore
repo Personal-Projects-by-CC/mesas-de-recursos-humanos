@@ -1,0 +1,54 @@
+# Node.js dependencies (si usas npm o yarn)
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Directorios temporales y de sistema
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Archivos de compilación o producción (ajusta según tu proyecto)
+dist/
+build/
+
+# Archivos de entorno (variables de entorno)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Archivos de cache
+.cache/
+.tmp/
+
+# Otros archivos temporales
+*.tmp
+*.temp
+
+# Si usas Sass/SCSS y generas CSS compilados que no quieres subir (opcional)
+# css/
+
+# Si usas algún archivo de base de datos local o SQLite (ejemplo)
+*.sqlite
+*.db
+
+# Archivos de sistema macOS
+.DS_Store
+
+# Archivos de sistema Windows
+Thumbs.db
+ehthumbs.db
+
+# Excepciones: NO ignores las carpetas de fuentes ni librerías que quieres subir
+# Por ejemplo, si tus fonts están en ./fonts, no ignores esa carpeta.
+# Si tienes fontawesome en ./vendor/fontawesome o ./libs/fontawesome, tampoco ignores.
+
