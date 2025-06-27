@@ -1,0 +1,19 @@
+.main {
+    position: absolute;
+    top: 6rem;
+    right: 0;
+    left: 0;
+
+    width: 100%;
+    min-height: calc(100vh - 12rem);
+    padding: 2rem;
+
+    @media (width >= 768px) {
+        top: 10rem;
+        right: 0;
+        left: unset;
+
+        width: calc(100% - 10rem);
+        min-height: calc(100vh - 10rem);
+    }
+}
