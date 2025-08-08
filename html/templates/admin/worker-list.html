@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worker List</title>
+
+    <link rel="icon" href="../../../static/media/favicon/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../../../static/css/base.css">
+    <link rel="stylesheet" href="../../../static/css/pages/worker-list.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <a href="" class="header__logo" aria-label="Go to homepage">
+                <img src="../../../static/media/svg/logo/logo-mrh.svg" alt="App Logo" class="header__logo-image">
+            </a>
+            <h1 class="header__title">
+                Mesas de Recursos Humanos
+            </h1>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <nav class="sidebar__nav" aria-label="Main navigation">
+            <ul class="sidebar__list">
+                <!-- Items for admin only -->
+                <li class="sidebar__item">
+                    <a href="./pending-request-list.html" class="sidebar__link">
+                        <i class="fa-solid fa-bell sidebar__icon"></i>
+                    </a>
+                </li>
+
+                <li class="sidebar__item">
+                    <a href="./worker-list.html" class="sidebar__link activated">
+                        <i class="fa-solid fa-user-tie sidebar__icon"></i>
+                    </a>
+                </li>
+
+                <!-- Item for workers only -->
+                <li class="sidebar__item d-none">
+                    <a href="" class="sidebar__link">
+                        <i class="fa-solid fa-house sidebar__icon"></i>
+                    </a>
+                </li>
+
+                <!-- Items for all profiles -->
+                <li class="sidebar__item">
+                    <a href="" class="sidebar__link">
+                        <i class="fa-solid fa-book sidebar__icon"></i>
+                    </a>
+                </li>
+
+                <li class="sidebar__item">
+                    <a href="" class="sidebar__link">
+                        <i class="fa-solid fa-arrow-right-to-bracket sidebar__icon"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <section class="worker-list">
+            <div class="worker-list__header">
+                <h2 class="worker-list__title">Lista de Trabajadores</h2>
+
+                <nav class="tab-switcher">
+                    <a href="" class="tabs__button activated">Todos/as</a>
+                    <a href="" class="tabs__button">Federales</a>
+                    <a href="" class="tabs__button">Estatales</a>
+                </nav>
+
+                <div class="search" role="search" aria-label="Search workers">
+                    <label for="search-workers" class="search__label visually-hidden">Search</label>
+                    <div class="search__wrapper">
+                        <input type="text" id="search-workers" class="search__input" placeholder="Buscar..." autocomplete="off">
+                        <span class="search__icon" aria-hidden="true">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table">
+                <div class="table__wrapper">
+                    <table class="table__container table--worker">
+                        <thead class="table__thead">
+                            <tr class="table__row">
+                                <th scope="col" class="table__header">Trabajador</th>
+                                <th scope="col" class="table__header">Contratación</th>
+                                <th scope="col" class="table__header">RFC</th>
+                                <th scope="col" class="table__header">CURP</th>
+                                <th scope="col" class="table__header">Correo electrónico</th>
+                                <th scope="col" class="table__header">Teléfono</th>
+                                <th scope="col" class="table__header">Unidad</th>
+                            </tr>
+                        </thead>
+                        <tbody id="worker-table-body" class="table__tbody">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination" aria-label="Paginación de tabla"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+        <dialog class="modal modal__profile-info" closedby="any">
+            <div class="profile-info__header flex-center flex-column">
+                <div
+                    class="profile-info__avatar flex-center"
+                    aria-hidden="true"
+                >
+                    <span class="profile-info__initial">#</span>
+                </div>
+                <p class="profile-info__name">Bernabé González Samudio</p>
+            </div>
+
+            <nav class="tab-switcher fit-content">
+                <a href="" class="tabs__button activated">Estatal</a>
+                <a href="" class="tabs__button">Federal</a>
+            </nav>
+
+            <section class="profile-info__data">
+                <p class="profile-info__item">
+                    <i class="fa-solid fa-id-card"></i>
+                    MUDD691107HTCPHX10
+                </p>
+                <p class="profile-info__item">
+                    <i class="fa-solid fa-envelope"></i>
+                    bernabeglz1917@gmail.com
+                </p>
+                <p class="profile-info__item">
+                    <i class="fa-solid fa-phone"></i>
+                    (+52) 993 457 4879
+                </p>
+            </section>
+
+            <p class="profile-info__unit">Unidad: Secretaría de Salud</p>
+
+            <form class="footer__modal" method="dialog">
+                <button class="button button--red" title="Cerrar información">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </form>
+        </dialog>
+    <!-- End Modal -->
+
+    <script>
+        const firstNames = ["Carlos", "Luis", "Ana", "Elena", "Jorge", "Mónica", "Pedro", "Sandra", "Alberto", "Lucía"];
+        const lastNames = ["Gómez", "Pérez", "Ramírez", "Torres", "Díaz", "Sánchez", "Vargas", "Morales", "Navarro", "Ortega"];
+        const hiringTypes = ["Federal", "Estatal"];
+        const unidades = ["Secretaría de Salud", "Servicios de Salud"];
+        const tableBody = document.getElementById("worker-table-body");
+
+        function getRandomItem(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        function generateCURP(nombre, apellido) {
+            return (apellido.substring(0, 2) + nombre.substring(0, 2) + "800101HCS" + Math.floor(Math.random() * 900 + 100)).toUpperCase();
+        }
+
+        function generateRFC(nombre, apellido) {
+            return (apellido.substring(0, 2) + nombre.substring(0, 2) + "800101" + Math.floor(Math.random() * 900)).toUpperCase();
+        }
+
+        function generateEmail(nombre, apellido) {
+            return `${nombre.toLowerCase()}.${apellido.toLowerCase()}@salud.gob.mx`;
+        }
+
+        function generatePhone() {
+            const part1 = Math.floor(100 + Math.random() * 900);
+            const part2 = Math.floor(100 + Math.random() * 900);
+            const part3 = Math.floor(1000 + Math.random() * 9000);
+            return `${part1}-${part2}-${part3}`;
+        }
+
+        for (let i = 0; i < 200; i++) {
+            const nombre = getRandomItem(firstNames);
+            const apellido = getRandomItem(lastNames);
+            const email = generateEmail(nombre, apellido);
+            const curp = generateCURP(nombre, apellido);
+            const rfc = generateRFC(nombre, apellido);
+            const contratacion = getRandomItem(hiringTypes);
+            const telefono = generatePhone();
+            const unidad = getRandomItem(unidades);
+
+            const row = document.createElement("tr");
+            row.classList.add("table__row");
+            row.innerHTML = `
+                <td class="table__cell">${nombre} ${apellido}</td>
+                <td class="table__cell">${contratacion}</td>
+                <td class="table__cell">${rfc}</td>
+                <td class="table__cell">${curp}</td>
+                <td class="table__cell">${email}</td>
+                <td class="table__cell">${telefono}</td>
+                <td class="table__cell">${unidad}</td>
+            `;
+
+            tableBody.appendChild(row);
+        }
+    </script>
+
+    <script src="../../../static/js/components/modals.js"></script>
+    <script src="../../../static/js/components/tab-switcher.js"></script>
+    <script src="../../../static/js/components/tables/worker-list.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desk Record</title>
+
+    <link rel="icon" href="../../../static/media/favicon/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../../../static/css/base.css">
+    <link rel="stylesheet" href="../../../static/css/pages/desks-record.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <a href="" class="header__logo" aria-label="Go to homepage">
+                <img src="../../../static/media/svg/logo/logo-mrh.svg" alt="App Logo" class="header__logo-image">
+            </a>
+            <h1 class="header__title">
+                Mesas de Recursos Humanos
+            </h1>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <nav class="sidebar__nav" aria-label="Main navigation">
+            <ul class="sidebar__list">
+                <!-- Items for admin only -->
+                <li class="sidebar__item d-none">
+                    <a href="" class="sidebar__link">
+                        <i class="fa-solid fa-bell sidebar__icon"></i>
+                    </a>
+                </li>
+
+                <li class="sidebar__item d-none">
+                    <a href="" class="sidebar__link">
+                        <i class="fa-solid fa-user-tie sidebar__icon"></i>
+                    </a>
+                </li>
+
+                <!-- Item for workers only -->
+                <li class="sidebar__item">
+                    <a href="" class="sidebar__link activated">
+                        <i class="fa-solid fa-thumbtack sidebar__icon"></i>
+                    </a>
+                </li>
+
+                <!-- Items for all profiles -->
+                <li class="sidebar__item">
+                    <a href="" class="sidebar__link">
+                        <i class="fa-solid fa-book sidebar__icon"></i>
+                    </a>
+                </li>
+
+                <li class="sidebar__item">
+                    <a href="" class="sidebar__link">
+                        <i class="fa-solid fa-arrow-right-to-bracket sidebar__icon"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <section class="desks-record">
+            <div class="desks-record__header">
+                <div class="desks-record__title-group">
+                    <a class="desks-record__back" href="./desks.html">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <p>Regresar</p>
+                    </a>
+
+                    <div class="desks-record__line"></div>
+
+                    <h2 class="desks-record__title">
+                        Historial de Solicitudes:
+                        <p>Actualización de correo electrónico para la plataforma Declar@Tabasco</p>
+                    </h2>
+                </div>
+
+                <div class="search" role="search" aria-label="Search workers">
+                    <label for="search-workers" class="search__label visually-hidden">Search</label>
+                    <div class="search__wrapper">
+                        <input type="text" id="search-workers" class="search__input" placeholder="Buscar..." autocomplete="off">
+                        <span class="search__icon" aria-hidden="true">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table">
+                <div class="table__wrapper">
+                    <table class="table__container table--desks">
+                        <thead class="table__thead">
+                            <tr class="table__row">
+                                <th scope="col" class="table__header">Fecha de solicitud</th>
+                                <th scope="col" class="table__header">Documento de solicitud</th>
+                                <th scope="col" class="table__header">Documento de respuesta</th>
+                                <th scope="col" class="table__header">Estatus</th>
+                            </tr>
+                        </thead>
+                        <tbody id="desks-record-table-body" class="table__tbody">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination" aria-label="Paginación de tabla"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../../../static/js/components/tables/desks-record.js"></script>
+</body>
+</html>

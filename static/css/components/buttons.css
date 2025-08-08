@@ -1,0 +1,84 @@
+/* --- 🧱 BASE STYLE --- */
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    width: 100%;
+    height: 3.2rem;
+    border: 2px solid var(--border-color-light);
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    font-size: clamp(1rem, 2vh, 1.4rem);
+    transition: border 0.4s ease, color 0.4s ease;
+
+    &:hover {
+        color: var(--color-highlight);
+        border: 2px solid var(--color-highlight);
+    }
+
+    @media (width >= 768px) {
+        gap: 0.8rem;
+        height: 4rem;
+    }
+}
+
+
+.button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    box-shadow: none;
+    border-color: var(--border-color-light);
+    color: var(--color-text);
+    background-color: var(--color-bg-main);
+}
+
+.button:disabled:hover {
+    background-color: var(--color-bg-light);
+    border-color: var(--border-color-light);
+    color: var(--color-text);
+}
+
+
+
+/* --- BACKGROUNDS COLOR --- */
+.button--dark {
+    background-color: var(--color-dark-bg);
+    border: 2px solid var(--color-dark-border);
+    color: var(--color-dark-text);
+    transition: border 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+
+    &:hover {
+        border: 2px solid var(--color-dark-border);
+        background-color: var(--color-dark-bg-hover);
+        color: var(--color-white);
+    }
+}
+
+.button--green {
+    background-color: var(--color-green-bg);
+    border: 2px solid var(--color-green-border);
+    color: var(--color-green-text);
+    transition: border 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+
+    &:hover {
+        border: 2px solid var(--color-green-border);
+        background-color: var(--color-green-bg-hover);
+        color: var(--color-white);
+    }
+}
+
+.button--red {
+    /* background-color: var(--color-red-bg);
+    border: 2px solid var(--color-red-border);
+    color: var(--color-red-text);
+    transition: border 0.4s ease, background-color 0.4s ease, color 0.4s ease; */
+
+    &:hover {
+        border: 2px solid var(--color-red-border);
+        background-color: var(--color-red-bg-hover);
+        color: var(--color-white);
+    }
+}

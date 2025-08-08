@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request List</title>
+
+    <link rel="icon" href="../../../static/media/favicon/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../../../static/css/base.css">
+    <link rel="stylesheet" href="../../../static/css/pages/request-list.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <a href="" class="header__logo" aria-label="Go to homepage">
+                <img src="../../../static/media/svg/logo/logo-mrh.svg" alt="App Logo" class="header__logo-image">
+            </a>
+            <h1 class="header__title">
+                Mesas de Recursos Humanos
+            </h1>
+        </div>
+    </header>
+
+    <aside class="sidebar">
+        <nav class="sidebar__nav" aria-label="Main navigation">
+            <ul class="sidebar__list">
+                <!-- Items for admin only -->
+                <li class="sidebar__item">
+                    <a href="./pending-request-list.html" class="sidebar__link activated">
+                        <i class="fa-solid fa-bell sidebar__icon"></i>
+                    </a>
+                </li>
+
+                <li class="sidebar__item">
+                    <a href="./worker-list.html" class="sidebar__link">
+                        <i class="fa-solid fa-user-tie sidebar__icon"></i>
+                    </a>
+                </li>
+
+                <!-- Item for workers only -->
+                <li class="sidebar__item d-none">
+                    <a href="" class="sidebar__link">
+                        <i class="fa-solid fa-house sidebar__icon"></i>
+                    </a>
+                </li>
+
+                <!-- Items for all profiles -->
+                <li class="sidebar__item">
+                    <a href="" class="sidebar__link">
+                        <i class="fa-solid fa-book sidebar__icon"></i>
+                    </a>
+                </li>
+
+                <li class="sidebar__item">
+                    <a href="" class="sidebar__link">
+                        <i class="fa-solid fa-arrow-right-to-bracket sidebar__icon"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <section class="request-list">
+            <div class="request-list__header">
+                <h2 class="request-list__title">Lista de Solicitudes</h2>
+
+                <nav class="tab-switcher fit-content">
+                    <a href="../../../html/templates/admin/pending-request-list.html" class="tabs__button activated">Pendientes</a>
+                    <a href="../../../html/templates/admin/attended-request-list.html" class="tabs__button">Atendidas</a>
+                </nav>
+
+                <div class="search" role="search" aria-label="Search workers">
+                    <label for="search-workers" class="search__label visually-hidden">Search</label>
+                    <div class="search__wrapper">
+                        <input type="text" id="search-workers" class="search__input" placeholder="Buscar..." autocomplete="off">
+                        <span class="search__icon" aria-hidden="true">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="worker-cards-container" class="request-list__main">
+            </div>
+        </section>
+    </main>
+
+    <script src="../../../static/js/components/search-bar.js"></script>
+</body>
+</html>

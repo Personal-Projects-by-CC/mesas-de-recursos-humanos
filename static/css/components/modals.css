@@ -1,0 +1,140 @@
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000 !important;
+    
+    width: calc(100% - 4rem);
+    max-width: 60rem;
+    padding: 2rem;
+    border: none;
+    border-radius: var(--radius-lg);
+    margin: auto;
+    
+    animation: fadeInModal 0.4s ease forwards;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    transform: scale(0.95);
+
+    scrollbar-width: thin;
+    scrollbar-color: #9f2241 transparent;
+    -webkit-overflow-scrolling: touch;
+
+    @media (width >= 768px) {
+        padding: 4rem;
+    }
+}
+
+.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    animation: fadeInBackdrop 0.4s ease forwards;
+}
+
+.modal[open] {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.header__modal {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    padding-bottom: 1.2rem;
+    border-bottom: 2px solid var(--border-color-light);
+}
+
+.main__modal {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    margin: 2rem 0 4rem 0;
+}
+
+.header__modal {
+    p {
+        font-size: clamp(0.8rem, 2vw, 1.2rem);
+
+        strong {
+            font-weight: 500;
+            text-decoration: underline;
+        }
+    }
+}
+
+.main__modal {
+    .format-input {
+        background-color: var(--border-color-highlight-light);
+    }
+
+    .format-input,
+    .requirements-input {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        padding: 2rem;
+        border: 2px solid var(--border-color-light);
+        border-radius: var(--radius-lg);
+    }
+}
+
+.footer__modal {
+    display: inline-flex;
+    justify-content: flex-end;
+    gap: 1.2rem;
+    width: 100%;
+
+    @media (width >= 768px) {
+        gap: 2rem;
+    }
+}
+
+.footer__modal button {
+    width: 50%;
+    padding: 0 2rem;
+}
+
+/* Modal Profile Info */
+.modal__profile-info {
+    .profile-info__header,
+    .tab-switcher,
+    .profile-info__data {
+        margin-bottom: 4rem;
+    }
+
+    .footer__modal {
+        position: absolute;
+        top: 4rem;
+        right: 4rem;
+
+        .button {
+            width: 4rem;
+            height: 4rem;
+
+            padding: 0;
+            font-size: 2rem;
+        }
+    }
+}
+
+@keyframes fadeInBackdrop {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+@keyframes fadeInModal {
+    from {
+        transform: scale(0.4);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

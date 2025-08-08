@@ -1,4 +1,166 @@
-/* 🖥️ DISPLAY */ 
+/* --- 🖥️ DISPLAY --- */
+.d-block {
+    display: block !important;
+}
+.d-inline-block {
+    display: inline-block !important;
+}
+.d-inline {
+    display: inline !important;
+}
+.d-flex {
+    display: flex !important;
+}
+.d-inline-flex {
+    display: inline-flex !important;
+}
 .d-none {
     display: none !important;
+}
+
+/* --- 📦 FLEXBOX HELPERS --- */
+.flex-center {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+.flex-column {
+    flex-direction: column !important;
+}
+.flex-wrap {
+    flex-wrap: wrap !important;
+}
+
+/* --- 📐 TEXT ALIGNMENT --- */
+.text-left {
+    text-align: left !important;
+}
+.text-center {
+    text-align: center !important;
+}
+.text-right {
+    text-align: right !important;
+}
+
+/* --- 🎨 TEXT COLORS --- */
+.text-primary {
+    color: var(--color-primary) !important;
+}
+.text-secondary {
+    color: var(--color-secondary) !important;
+}
+.text-success {
+    color: var(--color-success) !important;
+}
+.text-warning {
+    color: var(--color-warning) !important;
+}
+.text-error {
+    color: var(--color-error) !important;
+}
+.text-muted {
+    color: var(--color-muted) !important;
+}
+.text-white {
+    color: var(--color-white) !important;
+}
+
+/* --- 🔠 FONT SIZES --- */
+.fs-xs {
+    font-size: 1.2rem !important;
+}
+.fs-sm {
+    font-size: 1.4rem !important;
+}
+.fs-md {
+    font-size: 1.6rem !important;
+}
+.fs-lg {
+    font-size: 2rem !important;
+}
+.fs-xl {
+    font-size: 2.4rem !important;
+}
+
+/* --- 📏 MARGIN --- */
+.m-0 {
+    margin: 0 !important;
+}
+.mt-0 {
+    margin-top: 0 !important;
+}
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+.ml-0 {
+    margin-left: 0 !important;
+}
+.mr-0 {
+    margin-right: 0 !important;
+}
+.m-auto {
+    margin: auto !important;
+}
+
+.mt-1 {
+    margin-top: 0.4rem !important;
+}
+.mb-1 {
+    margin-bottom: 0.4rem !important;
+}
+
+/* --- 🧵 PADDING --- */
+.p-0 {
+    padding: 0 !important;
+}
+.pt-0 {
+    padding-top: 0 !important;
+}
+.pb-0 {
+    padding-bottom: 0 !important;
+}
+.pl-0 {
+    padding-left: 0 !important;
+}
+.pr-0 {
+    padding-right: 0 !important;
+}
+
+.pt-1 {
+    padding-top: 0.4rem !important;
+}
+.pb-1 {
+    padding-bottom: 0.4rem !important;
+}
+
+/* --- 🎯 BORDER RADIUS --- */
+.rounded {
+    border-radius: var(--radius-md) !important;
+}
+.rounded-sm {
+    border-radius: var(--radius-sm) !important;
+}
+.rounded-lg {
+    border-radius: var(--radius-lg) !important;
+}
+
+/* --- 🖱️ CURSOR --- */
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+/* --- 👀 VISIBILITY --- */
+.visible {
+    visibility: visible !important;
+}
+.invisible {
+    visibility: hidden !important;
+}
+
+/* --- 🌊 OVERFLOW --- */
+.overflow-hidden {
+    overflow: hidden !important;
+}
+.overflow-auto {
+    overflow: auto !important;
 }

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Desks</title>
+
+        <link
+            rel="icon"
+            href="../../../static/media/favicon/favicon.ico"
+            type="image/x-icon"
+        />
+
+        <link rel="stylesheet" href="../../../static/css/base.css" />
+        <link rel="stylesheet" href="../../../static/css/pages/desks.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="header__container">
+                <a href="" class="header__logo" aria-label="Go to homepage">
+                    <img
+                        src="../../../static/media/svg/logo/logo-mrh.svg"
+                        alt="App Logo"
+                        class="header__logo-image"
+                    />
+                </a>
+                <h1 class="header__title">Mesas de Recursos Humanos</h1>
+            </div>
+        </header>
+
+        <aside class="sidebar">
+            <nav class="sidebar__nav" aria-label="Main navigation">
+                <ul class="sidebar__list">
+                    <!-- Items for admin only -->
+                    <li class="sidebar__item d-none">
+                        <a href="" class="sidebar__link">
+                            <i class="fa-solid fa-bell sidebar__icon"></i>
+                        </a>
+                    </li>
+
+                    <li class="sidebar__item d-none">
+                        <a href="" class="sidebar__link">
+                            <i class="fa-solid fa-user-tie sidebar__icon"></i>
+                        </a>
+                    </li>
+
+                    <!-- Item for workers only -->
+                    <li class="sidebar__item">
+                        <a href="" class="sidebar__link activated">
+                            <i class="fa-solid fa-thumbtack sidebar__icon"></i>
+                        </a>
+                    </li>
+
+                    <!-- Items for all profiles -->
+                    <li class="sidebar__item">
+                        <a href="" class="sidebar__link">
+                            <i class="fa-solid fa-book sidebar__icon"></i>
+                        </a>
+                    </li>
+
+                    <li class="sidebar__item">
+                        <a href="" class="sidebar__link">
+                            <i
+                                class="fa-solid fa-arrow-right-to-bracket sidebar__icon"
+                            ></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main main__desks">
+            <aside class="profile-info" aria-label="User profile information">
+                <div class="profile-info__header flex-center flex-column">
+                    <div
+                        class="profile-info__avatar flex-center"
+                        aria-hidden="true"
+                    >
+                        <span class="profile-info__initial">#</span>
+                    </div>
+                    <p class="profile-info__name">Bernabé González Samudio</p>
+                </div>
+
+                <nav class="tab-switcher fit-content">
+                    <a href="" class="tabs__button activated">Estatal</a>
+                    <a href="" class="tabs__button">Federal</a>
+                </nav>
+
+                <section class="profile-info__data">
+                    <p class="profile-info__item">
+                        <i class="fa-solid fa-id-card"></i>
+                        MUDD691107HTCPHX10
+                    </p>
+                    <p class="profile-info__item">
+                        <i class="fa-solid fa-envelope"></i>
+                        bernabeglz1917@gmail.com
+                    </p>
+                    <p class="profile-info__item">
+                        <i class="fa-solid fa-phone"></i>
+                        (+52) 993 457 4879
+                    </p>
+                </section>
+
+                <p class="profile-info__unit">Unidad: Secretaría de Salud</p>
+            </aside>
+
+            <section class="desks">
+                <div class="desks__container">
+                    <div class="desks__header">
+                        <h2 class="desks__title">
+                            Mesa: Normatividad y Control (Estatal)
+                        </h2>
+                    </div>
+
+                    <div class="desks__main">
+                        <article class="card desks-card">
+                            <header class="desks-card__header">
+                                <div class="desks-card__info">
+                                    <h3 class="desks-card__title">
+                                        Actualización de correo electrónico para
+                                        la plataforma Declar@Tabasco
+                                    </h3>
+                                </div>
+                            </header>
+
+                            <section class="desks-card__body">
+                                <span class="status-tag tag--warning">
+                                    <i
+                                        class="fa-solid fa-spinner fa-spin-pulse"
+                                    ></i>
+                                    Pendiente
+                                </span>
+
+                                <a class="button" href="./desks-record.html">
+                                    <i
+                                        class="fa-solid fa-clock-rotate-left"
+                                    ></i>
+                                    Historial
+                                </a>
+
+                                <button class="button">
+                                    <i class="fa-solid fa-eye"></i>
+                                    Ver respuesta
+                                </button>
+                            </section>
+
+                            <footer class="desks-card__footer">
+                                <button class="button button--dark">
+                                    <i class="fa-solid fa-file-arrow-down"></i>
+                                    Descargar formato
+                                </button>
+
+                                <button
+                                    class="show-modal button button--dark"
+                                    aria-controls="myModal"
+                                    aria-haspopup="dialog"
+                                >
+                                    <i
+                                        class="fa-solid fa-envelope-open-text"
+                                    ></i>
+                                    Crear solicitud
+                                </button>
+
+                                <!-- Modal -->
+                                <dialog class="modal" closedby="any">
+                                    <header class="header__modal">
+                                        <h2>Enviar solicitud</h2>
+                                        <p>
+                                            En este paso, deberás subir el
+                                            <strong>formato que llenaste previamente</strong>,
+                                            junto con los documentos que se
+                                            solicitan según el trámite que estás
+                                            realizando.
+                                        </p>
+                                        <p>
+                                            Verifica que los
+                                            archivos estén completos, legibles y
+                                            actualizados.
+                                        </p>
+                                    </header>
+
+                                    <section class="main__modal">
+                                        <div class="format-input">
+                                            <h3>Formato de solicitud</h3>
+                                            <div class="file-input">
+                                                <button
+                                                    type="button"
+                                                    class="file-input__button"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-file-arrow-up"
+                                                    ></i>
+                                                    Subir solicitud
+                                                </button>
+                                                <input
+                                                    type="file"
+                                                    class="file-input__input"
+                                                    hidden
+                                                />
+                                                <a
+                                                    class="file-input__filename"
+                                                    href="#"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    >Ningún archivo seleccionado</a
+                                                >
+                                            </div>
+                                        </div>
+                                        <div class="requirements-input">
+                                            <h3>Requisitos</h3>
+
+                                            <div class="file-input">
+                                                <button
+                                                    type="button"
+                                                    class="file-input__button"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-file-arrow-up"
+                                                    ></i>
+                                                    Subir archivo 1
+                                                </button>
+                                                <input
+                                                    type="file"
+                                                    class="file-input__input"
+                                                    hidden
+                                                />
+                                                <a
+                                                    class="file-input__filename"
+                                                    href="#"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    >Ningún archivo seleccionado</a
+                                                >
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <form class="footer__modal" method="dialog">
+                                        <button
+                                            class="button button--green"
+                                            disabled
+                                        >
+                                            <i
+                                                class="fa-solid fa-paper-plane"
+                                            ></i>
+                                            Enviar solicitud
+                                        </button>
+
+                                        <button class="button button--red">
+                                            <i class="fa-solid fa-ban"></i>
+                                            Cancelar solicitud
+                                        </button>
+                                    </form>
+                                </dialog>
+                                <!-- End Modal -->
+                            </footer>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="desk__container">
+                    <div class="desks__header">
+                        <h2 class="desks__title">
+                            Mesa: Operaciones (Estatal)
+                        </h2>
+                    </div>
+
+                    <div class="desks__main">
+                        <article class="card desks-card">
+                            <header class="desks-card__header">
+                                <div class="desks-card__info">
+                                    <h3 class="desks-card__title">
+                                        Proporcional de Aguinaldo
+                                    </h3>
+                                </div>
+                            </header>
+
+                            <section class="desks-card__body">
+                                <span class="status-tag tag--success">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    Atendido
+                                </span>
+
+                                <a class="button" href="./desks-record.html">
+                                    <i
+                                        class="fa-solid fa-clock-rotate-left"
+                                    ></i>
+                                    Historial
+                                </a>
+
+                                <button class="button">
+                                    <i class="fa-solid fa-eye"></i>
+                                    Ver respuesta
+                                </button>
+                            </section>
+
+                            <footer class="desks-card__footer">
+                                <button class="button button--dark">
+                                    <i class="fa-solid fa-file-arrow-down"></i>
+                                    Descargar formato
+                                </button>
+
+                                <button
+                                    class="show-modal button button--dark"
+                                    aria-controls="myModal"
+                                    aria-haspopup="dialog"
+                                >
+                                    <i
+                                        class="fa-solid fa-envelope-open-text"
+                                    ></i>
+                                    Crear solicitud
+                                </button>
+
+                                <!-- Modal -->
+                                <dialog class="modal" closedby="any">
+                                    <header class="header__modal">
+                                        <h2>Enviar solicitud</h2>
+                                        <p>
+                                            En este paso, deberás subir el
+                                            <strong>formato que llenaste previamente</strong>,
+                                            junto con los documentos que se
+                                            solicitan según el trámite que estás
+                                            realizando.
+                                        </p>
+                                        <p>
+                                            Verifica que los
+                                            archivos estén completos, legibles y
+                                            actualizados.
+                                        </p>
+                                    </header>
+
+                                    <section class="main__modal">
+                                        <div class="format-input">
+                                            <h3>Formato de solicitud</h3>
+                                            <div class="file-input">
+                                                <button
+                                                    type="button"
+                                                    class="file-input__button"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-file-arrow-up"
+                                                    ></i>
+                                                    Subir solicitud
+                                                </button>
+                                                <input
+                                                    type="file"
+                                                    class="file-input__input"
+                                                    hidden
+                                                />
+                                                <a
+                                                    class="file-input__filename"
+                                                    href="#"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    >Ningún archivo seleccionado</a
+                                                >
+                                            </div>
+                                        </div>
+                                        <div class="requirements-input">
+                                            <h3>Requisitos</h3>
+
+                                            <div class="file-input">
+                                                <button
+                                                    type="button"
+                                                    class="file-input__button"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-file-arrow-up"
+                                                    ></i>
+                                                    Subir archivo 1
+                                                </button>
+                                                <input
+                                                    type="file"
+                                                    class="file-input__input"
+                                                    hidden
+                                                />
+                                                <a
+                                                    class="file-input__filename"
+                                                    href="#"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    >Ningún archivo seleccionado</a
+                                                >
+                                            </div>
+    
+                                            <div class="file-input">
+                                                <button
+                                                    type="button"
+                                                    class="file-input__button"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-file-arrow-up"
+                                                    ></i>
+                                                    Subir archivo 2
+                                                </button>
+                                                <input
+                                                    type="file"
+                                                    class="file-input__input"
+                                                    hidden
+                                                />
+                                                <a
+                                                    class="file-input__filename"
+                                                    href="#"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    >Ningún archivo seleccionado</a
+                                                >
+                                            </div>
+
+                                            <div class="file-input">
+                                                <button
+                                                    type="button"
+                                                    class="file-input__button"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-file-arrow-up"
+                                                    ></i>
+                                                    Subir archivo 3
+                                                </button>
+                                                <input
+                                                    type="file"
+                                                    class="file-input__input"
+                                                    hidden
+                                                />
+                                                <a
+                                                    class="file-input__filename"
+                                                    href="#"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    >Ningún archivo seleccionado</a
+                                                >
+                                            </div>
+
+                                            <div class="file-input">
+                                                <button
+                                                    type="button"
+                                                    class="file-input__button"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-file-arrow-up"
+                                                    ></i>
+                                                    Subir archivo 4
+                                                </button>
+                                                <input
+                                                    type="file"
+                                                    class="file-input__input"
+                                                    hidden
+                                                />
+                                                <a
+                                                    class="file-input__filename"
+                                                    href="#"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    >Ningún archivo seleccionado</a
+                                                >
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <form class="footer__modal" method="dialog">
+                                        <button
+                                            class="button button--green"
+                                            disabled
+                                        >
+                                            <i
+                                                class="fa-solid fa-paper-plane"
+                                            ></i>
+                                            Enviar solicitud
+                                        </button>
+
+                                        <button class="button button--red">
+                                            <i class="fa-solid fa-ban"></i>
+                                            Cancelar solicitud
+                                        </button>
+                                    </form>
+                                </dialog>
+                                <!-- End Modal -->
+                            </footer>
+                        </article>
+
+                        <article class="card desks-card">
+                            <header class="desks-card__header">
+                                <div class="desks-card__info">
+                                    <h3 class="desks-card__title">
+                                        Días Adicionales
+                                    </h3>
+                                </div>
+                            </header>
+
+                            <section class="desks-card__body">
+                                <span class="status-tag tag--success">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    Atendido
+                                </span>
+
+                                <a class="button" href="./desks-record.html">
+                                    <i
+                                        class="fa-solid fa-clock-rotate-left"
+                                    ></i>
+                                    Historial
+                                </a>
+
+                                <button class="button">
+                                    <i class="fa-solid fa-eye"></i>
+                                    Ver respuesta
+                                </button>
+                            </section>
+
+                            <footer class="desks-card__footer">
+                                <button class="button button--dark">
+                                    <i class="fa-solid fa-file-arrow-down"></i>
+                                    Descargar formato
+                                </button>
+
+                                <button
+                                    class="show-modal button button--dark"
+                                    aria-controls="myModal"
+                                    aria-haspopup="dialog"
+                                >
+                                    <i
+                                        class="fa-solid fa-envelope-open-text"
+                                    ></i>
+                                    Crear solicitud
+                                </button>
+
+                                <!-- Modal -->
+                                <dialog class="modal" closedby="any">
+                                    <header class="header__modal">
+                                        <h2>Enviar solicitud</h2>
+                                        <p>
+                                            En este paso, deberás subir el
+                                            <strong>formato que llenaste previamente</strong>,
+                                            junto con los documentos que se
+                                            solicitan según el trámite que estás
+                                            realizando.
+                                        </p>
+                                        <p>
+                                            Verifica que los
+                                            archivos estén completos, legibles y
+                                            actualizados.
+                                        </p>
+                                    </header>
+
+                                    <section class="main__modal">
+                                        <div class="format-input">
+                                            <h3>Formato de solicitud</h3>
+                                            <div class="file-input">
+                                                <button
+                                                    type="button"
+                                                    class="file-input__button"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-file-arrow-up"
+                                                    ></i>
+                                                    Subir solicitud
+                                                </button>
+                                                <input
+                                                    type="file"
+                                                    class="file-input__input"
+                                                    hidden
+                                                />
+                                                <a
+                                                    class="file-input__filename"
+                                                    href="#"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    >Ningún archivo seleccionado</a
+                                                >
+                                            </div>
+                                        </div>
+                                        <div class="requirements-input">
+                                            <h3>Requisitos</h3>
+
+                                            <div class="file-input">
+                                                <button
+                                                    type="button"
+                                                    class="file-input__button"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-file-arrow-up"
+                                                    ></i>
+                                                    Subir archivo 1
+                                                </button>
+                                                <input
+                                                    type="file"
+                                                    class="file-input__input"
+                                                    hidden
+                                                />
+                                                <a
+                                                    class="file-input__filename"
+                                                    href="#"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    >Ningún archivo seleccionado</a
+                                                >
+                                            </div>
+    
+                                            <div class="file-input">
+                                                <button
+                                                    type="button"
+                                                    class="file-input__button"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-file-arrow-up"
+                                                    ></i>
+                                                    Subir archivo 2
+                                                </button>
+                                                <input
+                                                    type="file"
+                                                    class="file-input__input"
+                                                    hidden
+                                                />
+                                                <a
+                                                    class="file-input__filename"
+                                                    href="#"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    >Ningún archivo seleccionado</a
+                                                >
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <form class="footer__modal" method="dialog">
+                                        <button
+                                            class="button button--green"
+                                            disabled
+                                        >
+                                            <i
+                                                class="fa-solid fa-paper-plane"
+                                            ></i>
+                                            Enviar solicitud
+                                        </button>
+
+                                        <button class="button button--red">
+                                            <i class="fa-solid fa-ban"></i>
+                                            Cancelar solicitud
+                                        </button>
+                                    </form>
+                                </dialog>
+                                <!-- End Modal -->
+                            </footer>
+                        </article>
+
+                        <article class="card desks-card">
+                            <header class="desks-card__header">
+                                <div class="desks-card__info">
+                                    <h3 class="desks-card__title">
+                                        Días Económicos
+                                    </h3>
+                                </div>
+                            </header>
+
+                            <section class="desks-card__body">
+                                <span class="status-tag tag--info">
+                                    <i class="fa-solid fa-circle fa-beat-fade"></i>
+                                    Disponible
+                                </span>
+
+                                <a class="button" href="./desks-record.html">
+                                    <i
+                                        class="fa-solid fa-clock-rotate-left"
+                                    ></i>
+                                    Historial
+                                </a>
+
+                                <button class="button">
+                                    <i class="fa-solid fa-eye"></i>
+                                    Ver respuesta
+                                </button>
+                            </section>
+
+                            <footer class="desks-card__footer">
+                                <button class="button button--dark">
+                                    <i class="fa-solid fa-file-arrow-down"></i>
+                                    Descargar formato
+                                </button>
+
+                                <button
+                                    class="show-modal button button--dark"
+                                    aria-controls="myModal"
+                                    aria-haspopup="dialog"
+                                >
+                                    <i
+                                        class="fa-solid fa-envelope-open-text"
+                                    ></i>
+                                    Crear solicitud
+                                </button>
+
+                                <!-- Modal -->
+                                <dialog class="modal" closedby="any">
+                                    <header class="header__modal">
+                                        <h2>Enviar solicitud</h2>
+                                        <p>
+                                            En este paso, deberás subir el
+                                            <strong>formato que llenaste previamente</strong>,
+                                            junto con los documentos que se
+                                            solicitan según el trámite que estás
+                                            realizando.
+                                        </p>
+                                        <p>
+                                            Verifica que los
+                                            archivos estén completos, legibles y
+                                            actualizados.
+                                        </p>
+                                    </header>
+
+                                    <section class="main__modal">
+                                        <div class="format-input">
+                                            <h3>Formato de solicitud</h3>
+                                            <div class="file-input">
+                                                <button
+                                                    type="button"
+                                                    class="file-input__button"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-file-arrow-up"
+                                                    ></i>
+                                                    Subir solicitud
+                                                </button>
+                                                <input
+                                                    type="file"
+                                                    class="file-input__input"
+                                                    hidden
+                                                />
+                                                <a
+                                                    class="file-input__filename"
+                                                    href="#"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    >Ningún archivo seleccionado</a
+                                                >
+                                            </div>
+                                        </div>
+                                        <div class="requirements-input">
+                                            <h3>Requisitos</h3>
+
+                                            <div class="file-input">
+                                                <button
+                                                    type="button"
+                                                    class="file-input__button"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-file-arrow-up"
+                                                    ></i>
+                                                    Subir archivo 1
+                                                </button>
+                                                <input
+                                                    type="file"
+                                                    class="file-input__input"
+                                                    hidden
+                                                />
+                                                <a
+                                                    class="file-input__filename"
+                                                    href="#"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    >Ningún archivo seleccionado</a
+                                                >
+                                            </div>
+    
+                                            <div class="file-input">
+                                                <button
+                                                    type="button"
+                                                    class="file-input__button"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-file-arrow-up"
+                                                    ></i>
+                                                    Subir archivo 2
+                                                </button>
+                                                <input
+                                                    type="file"
+                                                    class="file-input__input"
+                                                    hidden
+                                                />
+                                                <a
+                                                    class="file-input__filename"
+                                                    href="#"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    >Ningún archivo seleccionado</a
+                                                >
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <form class="footer__modal" method="dialog">
+                                        <button
+                                            class="button button--green"
+                                            disabled
+                                        >
+                                            <i
+                                                class="fa-solid fa-paper-plane"
+                                            ></i>
+                                            Enviar solicitud
+                                        </button>
+
+                                        <button class="button button--red">
+                                            <i class="fa-solid fa-ban"></i>
+                                            Cancelar solicitud
+                                        </button>
+                                    </form>
+                                </dialog>
+                                <!-- End Modal -->
+                            </footer>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="../../../static/js/components/modals.js"></script>
+        <script src="../../../static/js/components/file-input.js"></script>
+    </body>
+</html>

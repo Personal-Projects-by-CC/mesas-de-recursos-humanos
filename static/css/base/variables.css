@@ -5,38 +5,64 @@
     --color-white: #fefefe;       
     --color-highlight: #9f2241;
     --color-muted: #62626299;
+    --color-blue: #3498db;
 
         /* for Background */
-    --color-bg-main: #f7f7f7;       /* Fondo principal claro y suave */
-    --color-bg-surface: #ffffff;    /* Superficies: tarjetas, modales */
-    --color-bg-soft: #fefefe;       /* Fondo más claro, para cajas o secciones */
-    --color-bg-muted: #E7E1E1;      /* Secciones secundarias */
-    --color-bg-accent: #9f2241;     /* Fondo fuerte institucional */
-
-        /* for Status Tags */
-            /* Success */
-    --color-success-border: #2ecc71;
-    --color-success-bg: rgba(46, 204, 113, 0.1);  
-    --color-success-text: #207245;                
-
-            /* Warning */
-    --color-warning-border: #f39c12;
-    --color-warning-bg: rgba(243, 156, 18, 0.1);
-    --color-warning-text: #8a5a00;
-
-            /* Error */
-    --color-error-border: #e74c3c;
-    --color-error-bg: rgba(231, 76, 60, 0.1);
-    --color-error-text: #a3271b;
-
-            /* Info */
-    --color-info-border: #3498db;
-    --color-info-bg: rgba(52, 152, 219, 0.1);
-    --color-info-text: #1a517a;
+    --color-bg-main: #f7f7f7;       
+    --color-bg-surface: #ffffff;   
+    --color-bg-soft: #fefefe;      
+    --color-bg-muted: #1a1a1a1a;     
+    --color-bg-accent: #9f2241;
+    --color-bg-dark: #1a1a1a;
+    --color-bg-blue: #0b9dff23; 
+    --color-bg-light: #E7E1E1;
 
         /* for Border */
     --border-color-dark: #1a1a1a;   
     --border-color-light: #E7E1E1;  
+    --border-color-highlight: #9f2241;
+    --border-color-highlight-light: #fdf5f7;
+    --border-color-blue: #3498db;
+
+        /* for Button */
+            /* Dark */
+    --color-dark-bg: rgba(26, 26, 26, 0.04);
+    --color-dark-bg-hover: #1a1a1a;
+    --color-dark-border: #1a1a1a;
+    --color-dark-text: #252525;
+
+            /* Green */
+    --color-green-bg: rgba(46, 204, 113, 0.1);
+    --color-green-bg-hover: #2ecc71;
+    --color-green-border: #2ecc71;
+    --color-green-text: #207245;
+
+            /* Red */
+    --color-red-bg: rgba(231, 76, 60, 0.1);
+    --color-red-bg-hover: #e74c3c;
+    --color-red-border: #e74c3c;
+    --color-red-text: #a3271b;
+
+        /* for Status Tags */
+            /* Success */
+    --color-success-bg: rgba(46, 204, 113, 0.1);  
+    --color-success-border: #2ecc71;
+    --color-success-text: #207245;                
+
+            /* Warning */
+    --color-warning-bg: rgba(243, 156, 18, 0.1);
+    --color-warning-border: #f39c12;
+    --color-warning-text: #8a5a00;
+
+            /* Error */
+    --color-error-bg: rgba(231, 76, 60, 0.1);
+    --color-error-border: #e74c3c;
+    --color-error-text: #a3271b;
+
+            /* Info */
+    --color-info-bg: rgba(52, 152, 219, 0.1);
+    --color-info-border: #3498db;
+    --color-info-text: #1a517a;
 
 
     /* 🔤 TYPOGRAPHY */

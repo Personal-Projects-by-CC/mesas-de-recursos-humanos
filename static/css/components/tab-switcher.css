@@ -1,18 +1,19 @@
 .tab-switcher {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 0.8rem;
-    width: fit-content;
-    height: 5.6rem;
+    width: 100%;
+    height: fit-content;
+    
+    padding: 0.6rem;
 
-    border-radius: var(--radius-lg);
+    border: 2px solid var(--border-color-light, #E7E1E1);
+    border-radius: var(--radius-md);
     background-color: var(--color-bg-main, #f7f7f7);
-    box-shadow: var(--shadow-md);
-    transition: box-shadow 0.4s ease;
 
-    &:hover {
-        box-shadow: var(--shadow-lg);
+    @media (width >= 768px) {
+        width: fit-content;
     }
 }
 
@@ -20,17 +21,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 16rem;
-    height: 4rem;
+    width: 11.4rem;
+    height: 2.8rem;
 
     border-radius: var(--radius-sm);
-    outline: 0.8rem solid var(--color-bg-main, #f7f7f7);
-    transition: background-color 0.4s ease, color 0.8s ease, outline 0.4s ease;
+    transition: background-color 0.4s ease, color 0.8s ease;
+
+    @media (width >= 768px) {
+        width: 16rem;
+        height: 3.2rem;
+    }
 }
 
 .tabs__button.activated {
-    outline: 0.8rem solid var(--color-bg-main, #f7f7f7);
-    background-color: var(--color-bg-accent, #9f2241);
+    background-color: var(--color-bg-dark, #1a1a1a);
     color: var(--color-white, #fefefe);
     font-weight: 500;
 }
