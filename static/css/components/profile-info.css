@@ -18,8 +18,8 @@
     }
 
     @media (width >= 1080px) {
-        position: absolute;
-        top: 2rem;
+        position: fixed;
+        top: 12rem;
         right: 4rem;
 
         gap: 4rem;

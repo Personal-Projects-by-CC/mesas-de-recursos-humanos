@@ -118,23 +118,3 @@
     }
 }
 
-@keyframes fadeInBackdrop {
-    from {
-        background-color: rgba(0, 0, 0, 0);
-    }
-    to {
-        background-color: rgba(0, 0, 0, 0.6);
-    }
-}
-
-@keyframes fadeInModal {
-    from {
-        transform: scale(0.4);
-        opacity: 0;
-    }
-
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
