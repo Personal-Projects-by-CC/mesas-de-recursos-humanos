@@ -52,6 +52,7 @@
         justify-content: flex-start;
         gap: 2rem;
         padding-block: 2rem;
+        
         overflow-y: auto;
         overscroll-behavior-y: contain;
         scroll-behavior: smooth;

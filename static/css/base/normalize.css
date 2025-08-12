@@ -130,8 +130,3 @@ input, textarea {
 button, input, select, textarea {
     -webkit-tap-highlight-color: transparent;
 }
-
-/* :focus {
-    outline: 2px solid var(--color-highlight, #9f2241);
-    outline-offset: 2px;
-} */
