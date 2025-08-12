@@ -154,11 +154,11 @@ function renderWorkerCards(workersList) {
                 </p>
             </section>
             <footer class="worker-card__footer">
-                <button class="button">
+                <button class="button button--dark">
                     <i class="fa-solid fa-envelope-circle-check"></i>
                     Ver solicitud
                 </button>
-                <button class="button">
+                <button class="button button--dark">
                     <i class="fa-solid fa-reply"></i>
                     Responder solicitud
                 </button>

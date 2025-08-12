@@ -1,0 +1,24 @@
+/* Form: create desk request */
+.form__create-desk-request {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .format-input,
+    .requirements-input {
+        display: grid;
+        gap: 2rem;
+    }
+
+    .format-input,
+    .requirements-input {
+        padding: 2rem;
+
+        border: 2px solid var(--border-color-light);
+        border-radius: var(--radius-lg);
+    }
+
+    .format-input {
+        background-color: var(--border-color-highlight-light);
+    }
+}

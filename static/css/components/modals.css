@@ -1,15 +1,16 @@
+/* General modal design */
 .modal {
     position: fixed;
     inset: 0;
-    z-index: 1000 !important;
-    
+    z-index: var(--z-index-modal);
+
     width: calc(100% - 4rem);
     max-width: 60rem;
     padding: 2rem;
     border: none;
     border-radius: var(--radius-lg);
     margin: auto;
-    
+
     animation: fadeInModal 0.4s ease forwards;
     box-shadow: var(--shadow-lg);
     opacity: 0;
@@ -19,102 +20,106 @@
     scrollbar-color: #9f2241 transparent;
     -webkit-overflow-scrolling: touch;
 
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.6);
+        animation: fadeInBackdrop 0.4s ease forwards;
+    }
+
+    &:open {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
     @media (width >= 768px) {
-        padding: 4rem;
-    }
-}
-
-.modal::backdrop {
-    background-color: rgba(0, 0, 0, 0.6);
-    animation: fadeInBackdrop 0.4s ease forwards;
-}
-
-.modal[open] {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.header__modal {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-
-    padding-bottom: 1.2rem;
-    border-bottom: 2px solid var(--border-color-light);
-}
-
-.main__modal {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
-    margin: 2rem 0 4rem 0;
-}
-
-.header__modal {
-    p {
-        font-size: clamp(0.8rem, 2vw, 1.2rem);
-
-        strong {
-            font-weight: 500;
-            text-decoration: underline;
-        }
-    }
-}
-
-.main__modal {
-    .format-input {
-        background-color: var(--border-color-highlight-light);
+        padding: 3.2rem;
     }
 
-    .format-input,
-    .requirements-input {
+    .modal__container {
         display: flex;
         flex-direction: column;
         gap: 2rem;
 
-        padding: 2rem;
-        border: 2px solid var(--border-color-light);
-        border-radius: var(--radius-lg);
-    }
-}
+        @media (width >= 768px) {
+            gap: 3.2rem;
+        }
 
-.footer__modal {
-    display: inline-flex;
-    justify-content: flex-end;
-    gap: 1.2rem;
-    width: 100%;
-
-    @media (width >= 768px) {
-        gap: 2rem;
-    }
-}
-
-.footer__modal button {
-    width: 50%;
-    padding: 0 2rem;
-}
-
-/* Modal Profile Info */
-.modal__profile-info {
-    .profile-info__header,
-    .tab-switcher,
-    .profile-info__data {
-        margin-bottom: 4rem;
-    }
-
-    .footer__modal {
-        position: absolute;
-        top: 4rem;
-        right: 4rem;
-
-        .button {
-            width: 4rem;
-            height: 4rem;
-
-            padding: 0;
-            font-size: 2rem;
+        .modal__header,
+        .modal__body,
+        .modal__footer {
+            width: 100%;
+        }
+    
+        .modal__footer {
+            padding-bottom: 2rem;
+            border-top: 2px solid var(--border-color-light);
+    
+            @media (width >= 768px) {
+                padding-top: 3.2rem;
+            }
+    
+            .modal__form {
+                display: flex;
+                gap: 2rem;
+    
+                width: inherit;
+            }
         }
     }
 }
 
+/* Modal design: log out */
+.modal__logout {
+    .modal__container {
+        .modal__header {
+            text-align: center;
+        }
+
+        .modal__body {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        
+            .modal__image-container {
+                display: grid;
+                place-content: center;
+
+                width: 100%;
+
+                img {
+                    height: 24rem;
+                }
+            }
+
+            p {
+                font-size: clamp(1.2rem, 2vw, 1.6rem);
+                text-align: center;
+
+                strong {
+                    font-weight: 600;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+/* Modal design: create desk request */
+.modal__create-desk-request {
+    .modal__container {
+        .modal__header {
+            .modal__description {
+                margin-top: 0.8rem;
+
+                p {
+                    font-size: clamp(0.8rem, 2vw, 1.2rem);
+                    text-align: justify;
+
+                    strong {
+                        font-weight: 600;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

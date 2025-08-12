@@ -27,14 +27,14 @@
             <ul class="sidebar__list">
                 <!-- Items for admin only -->
                 <li class="sidebar__item d-none">
-                    <a href="" class="sidebar__link">
+                    <a href="../admin/pending-request-list.html" class="sidebar__link">
                         <i class="fa-solid fa-bell sidebar__icon"></i>
                         <span class="sidebar__text">Solicitudes</span>
                     </a>
                 </li>
 
                 <li class="sidebar__item d-none">
-                    <a href="" class="sidebar__link">
+                    <a href="../admin/worker-list.html" class="sidebar__link">
                         <i class="fa-solid fa-user-tie sidebar__icon"></i>
                         <span class="sidebar__text">Trabajadores</span>
                     </a>
@@ -42,7 +42,7 @@
 
                 <!-- Item for workers only -->
                 <li class="sidebar__item">
-                    <a href="" class="sidebar__link activated">
+                    <a href="../workers/desks.html" class="sidebar__link activated">
                         <i class="fa-solid fa-thumbtack sidebar__icon"></i>
                         <span class="sidebar__text">Mesas</span>
                     </a>
@@ -50,18 +50,57 @@
 
                 <!-- Items for all profiles -->
                 <li class="sidebar__item">
-                    <a href="" class="sidebar__link">
+                    <a href="#" class="sidebar__link">
                         <i class="fa-solid fa-book sidebar__icon"></i>
                         <span class="sidebar__text">Manual de usuario</span>
                     </a>
                 </li>
 
-                <li class="sidebar__item">
-                    <a href="" class="sidebar__link">
+                <li class="sidebar__item last-item">
+                    <button class="sidebar__link show-modal" aria-controls="myModal" aria-haspopup="dialog" data-modal="logout">
                         <i class="fa-solid fa-arrow-right-to-bracket sidebar__icon"></i>
                         <span class="sidebar__text last">Cerrar sesión</span>
-                    </a>
+                    </button>
                 </li>
+
+                <!-- Modal: log out -->
+                    <dialog class="modal modal__logout" aria-labelledby="modal-title" aria-describedby="modal-description" closedby="any" data-modal="logout">
+                        <!-- Contenedor principal -->
+                        <div class="modal__container">
+                            <!-- Header -->
+                            <header class="modal__header">
+                                <h2 class="modal__title">¿Desea cerrar su sesión?</h2>
+                            </header>
+
+                            <!-- Body -->
+                            <section class="modal__body">
+                                <div class="modal__image-container">
+                                    <img src="/static/media/svg/modals/logout.svg" alt="Ilustración de una mujer con un globo indicando precaución">
+                                </div>
+
+                                <p>
+                                    Si tiene solicitudes en proceso o archivos sin guardar, 
+                                    <strong>estos podrían perderse</strong>.
+                                    Asegúrese de haber completado y enviado toda su información antes de salir.
+                                </p>
+                            </section>
+
+                            <!-- Footer -->
+                            <footer class="modal__footer">
+                                <form class="modal__form modal__form--logout" method="dialog">
+                                    <button class="button">
+                                        <i class="fa-solid fa-ban"></i>
+                                        Cancelar
+                                    </button>
+                                    <a href="#" class="button button--red">
+                                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                        Cerrar sesión
+                                    </a>
+                                </form>
+                            </footer>
+                        </div>
+                    </dialog>
+                <!-- End Modal: log out -->
             </ul>
         </nav>
     </aside>
@@ -115,6 +154,7 @@
         </section>
     </main>
 
+    <script src="../../../static/js/components/modals.js"></script>
     <script src="../../../static/js/components/tables/desks-record.js"></script>
 </body>
 </html>

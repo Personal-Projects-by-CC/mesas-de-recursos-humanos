@@ -65,7 +65,7 @@
     height: 4rem;
     z-index: 1;
 
-    &:last-child {
+    &.last-item {
         margin-top: 0;
 
         @media (width >= 768px) {

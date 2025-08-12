@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Maneja click en botones para abrir el input file oculto
+    // Abrir input file oculto al hacer click en el botón
     document.addEventListener("click", (event) => {
         const button = event.target.closest(".file-input__button");
         if (button) {
@@ -9,13 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Manejar carga de archivos
     document.addEventListener("change", (event) => {
         const input = event.target;
         if (!input.matches(".file-input__input")) return;
 
         const container = input.closest(".file-input");
-        const modal = input.closest(".modal");
+        const modal = input.closest("dialog.modal"); // 🔹 Forzar que encuentre el dialog del modal
         const filenameLink = container.querySelector(".file-input__filename");
+
+        if (!modal) return; // Si no encuentra el modal, no hace nada
 
         if (filenameLink) {
             if (input.files.length > 0) {
@@ -27,39 +30,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 icon.style.marginRight = "0.5rem";
 
                 switch (extension) {
-                    case "pdf":
-                        icon.className = "fa-solid fa-file-pdf";
-                        icon.style.color = "#D32F2F";
-                        break;
+                    case "pdf": icon.className = "fa-solid fa-file-pdf"; icon.style.color = "#D32F2F"; break;
                     case "doc":
-                    case "docx":
-                        icon.className = "fa-solid fa-file-word";
-                        icon.style.color = "#1E88E5";
-                        break;
+                    case "docx": icon.className = "fa-solid fa-file-word"; icon.style.color = "#1E88E5"; break;
                     case "xls":
                     case "xlsx":
-                    case "csv":
-                        icon.className = "fa-solid fa-file-excel";
-                        icon.style.color = "#43A047";
-                        break;
+                    case "csv": icon.className = "fa-solid fa-file-excel"; icon.style.color = "#43A047"; break;
                     case "jpg":
                     case "jpeg":
                     case "png":
-                    case "gif":
-                        icon.className = "fa-solid fa-file-image";
-                        icon.style.color = "#F39C12";
-                        break;
+                    case "gif": icon.className = "fa-solid fa-file-image"; icon.style.color = "#F39C12"; break;
                     case "mp4":
                     case "mov":
                     case "avi":
                     case "mkv":
-                    case "webm":
-                        icon.className = "fa-solid fa-file-video";
-                        icon.style.color = "#8E24AA";
-                        break;
-                    default:
-                        icon.className = "fa-solid fa-file";
-                        icon.style.color = "#757575";
+                    case "webm": icon.className = "fa-solid fa-file-video"; icon.style.color = "#8E24AA"; break;
+                    default: icon.className = "fa-solid fa-file"; icon.style.color = "#757575";
                 }
 
                 filenameLink.innerHTML = "";
@@ -71,9 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 container.classList.add("file-input--uploaded");
                 const uploadButton = container.querySelector(".file-input__button");
-                if (uploadButton) {
-                    uploadButton.style.borderColor = "var(--color-green-border)";
-                }
+                if (uploadButton) uploadButton.style.borderColor = "var(--color-green-border)";
             } else {
                 filenameLink.textContent = "Ningún archivo seleccionado";
                 filenameLink.removeAttribute("href");
@@ -81,17 +65,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 filenameLink.style.pointerEvents = "none";
 
                 const uploadButton = container.querySelector(".file-input__button");
-                if (uploadButton) {
-                    uploadButton.style.borderColor = "";
-                }
+                if (uploadButton) uploadButton.style.borderColor = "";
                 container.classList.remove("file-input--uploaded");
             }
 
-            // ✅ Revisa solo los inputs dentro del modal actual
+            // ✅ Verificar inputs solo dentro de este modal
             const modalInputs = modal.querySelectorAll(".file-input__input");
-            const allFilled = Array.from(modalInputs).every(
-                (input) => input.files.length > 0
-            );
+            const allFilled = Array.from(modalInputs).every(inp => inp.files.length > 0);
 
             const saveButton = modal.querySelector(".button--green");
             if (saveButton) {
