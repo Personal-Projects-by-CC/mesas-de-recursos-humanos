@@ -141,6 +141,8 @@
 
     @media (width >= 768px) {
         border-radius: var(--radius-lg);
+
+        cursor: pointer;
     }
 }
 

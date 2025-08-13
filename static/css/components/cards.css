@@ -117,7 +117,7 @@
 }
 
 .desks-card__body {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     padding: 2rem 0;
 }
 
