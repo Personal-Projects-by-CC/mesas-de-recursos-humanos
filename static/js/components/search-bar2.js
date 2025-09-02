@@ -148,7 +148,10 @@ function renderWorkerCards(workersList) {
                 </div>
             </header>
             <section class="worker-card__body">
-                <h4 class="worker-card__subject-title">Asunto</h4>
+                <h4 class="worker-card__subject-title">
+                    Asunto
+                    <p class="worker-card__date">02/09/2025</p>
+                </h4>
                 <p class="worker-card__subject-text">
                     ${worker.subject}
                 </p>

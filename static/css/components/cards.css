@@ -80,6 +80,32 @@
 }
 
 .worker-card__subject-title {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.worker-card__date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    height: clamp(1.4rem, 1rem + 0.5vw, 2rem);
+    padding-inline: 0.8rem;
+
+    border: 0.2rem solid #db9da8;
+    border-radius: var(--radius-md);
+    
+    /* background-color: #f0dadf; */
+    font-size: clamp(0.6rem, 1rem + 0.5vw, 1.2rem);
+    font-weight: 500;
+    line-height: 1;
+}
+
+.worker-card__subject-title {
     margin-bottom: 0.4rem;
     font-weight: bold;
 }
